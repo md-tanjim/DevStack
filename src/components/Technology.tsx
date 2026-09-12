@@ -60,6 +60,7 @@ return (
                     // console.log(selectedStack.name, "this is frin technology")
                     return <YourStack
                     selectedStack = {selectedStack}
+                    yourStack = {yourStack}
                     setYourStack = {setYourStack}
                     ></YourStack>
                 })

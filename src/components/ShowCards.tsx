@@ -36,7 +36,13 @@ const ShowCards = ({stack, yourStack, setYourStack}: IShowCards) => {
       </div>
 
       <button 
-      onClick={()=> setYourStack([...yourStack,stack])}
+      onClick={()=> {
+        if(!yourStack.includes(stack))
+        setYourStack([...yourStack,stack]);
+
+       
+    
+    }}
       className="btn btn-wide rounded-lg mt-3 bg-[#0A0F1D] text-white">Add to Stack</button>
     </div>
 
