@@ -1,19 +1,25 @@
 // import React from 'react';
 
-import type { Dispatch, SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import type { mainType } from "../types/mainType";
+import { Bounce, toast } from "react-toastify";
 
 
 interface IShowCards{
     stack : mainType,
     yourStack : mainType[],
     setYourStack : Dispatch<SetStateAction<mainType[]>>,
+    selected : number[],
+    setSelected : Dispatch<SetStateAction<number[]>>,
 }
 
 
-const ShowCards = ({stack, yourStack, setYourStack}: IShowCards) => {
+const ShowCards = ({stack, yourStack, setYourStack, selected, setSelected}: IShowCards) => {
    console.log(stack, "this is stacks")
    console.log(yourStack, "this is stacks")
+
+
+   
 
     return (    
 
@@ -37,13 +43,48 @@ const ShowCards = ({stack, yourStack, setYourStack}: IShowCards) => {
 
       <button 
       onClick={()=> {
-        if(!yourStack.includes(stack))
-        setYourStack([...yourStack,stack]);
+        if(!yourStack.includes(stack)){
 
-       
-    
-    }}
-      className="btn btn-wide rounded-lg mt-3 bg-[#0A0F1D] text-white">Add to Stack</button>
+          setYourStack([...yourStack,stack]);
+          setSelected([...selected,stack.id]);
+          toast(`${stack.name} is added successfully`)
+
+
+        }
+        else
+        toast.error(`${stack.name} is already added`, {
+position: "top-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "colored",
+transition: Bounce,
+});
+      
+
+
+      }}
+      // disabled={selected}
+      // disabled={yourStack.includes(stack =>{
+      //   return (
+
+      //    stack ?  'bg-[#b8bed0] text-white cursor-not-allowed'
+      //     : 'bg-[#0A0F1D] text-white border-gray-200 '
+      //   ) 
+      // })}
+      className={`btn btn-wide rounded-lg mt-3 
+
+        
+
+      ${selected.includes(stack.id) 
+      ?  'bg-[#b8bed0] text-white cursor-not-allowed'
+      : 'bg-[#0A0F1D] text-white border-gray-200 '
+    }
+      
+      `} >{selected.includes(stack.id) ? "✓ Added to Stack" : "Add To Stack"}</button>
     </div>
 
 

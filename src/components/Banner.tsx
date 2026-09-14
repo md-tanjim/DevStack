@@ -1,6 +1,7 @@
 // import React from 'react';
 import ban from "../assets/banner-stack.png";
 
+
 const Banner = () => {
     return (
 
@@ -12,7 +13,8 @@ const Banner = () => {
     <h1 className="text-6xl font-bold text-black-900 ">
       Build Your Ideal
       <br />
-      <span className="bg-linear-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+      {/* <span className="bg-linear-to-r  from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"> */}
+      <span className="primary-gradient bg-clip-text text-transparent">
         Development Stack
       </span>
     </h1>
@@ -26,7 +28,7 @@ const Banner = () => {
     <div className="flex gap-5 mt-10">
 
       <button className="rounded-xl text-white font-semibold
-       bg-linear-to-r from-orange-500 to-pink-500 px-8 py-4">
+       primary-gradient px-8 py-4">
         Explore Technologies </button>
 
       <button className="rounded-xl border border-gray-300

@@ -4,6 +4,7 @@ import Banner from './components/Banner'
 import Nav from './components/Nav'
 import type { mainType } from './types/mainType';
 import Technology from './components/Technology';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
     <Technology stackPromise={stackPromise()}></Technology>
 
     </Suspense>
+
+    <Footer></Footer>
 
    </div>
   )

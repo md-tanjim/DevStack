@@ -7,7 +7,7 @@ const Nav = () => {
 
   const [open, setOpen] = useState(false);
   return (
-    <div className="shadow-sm">
+    <div className="shadow-sm sticky top-0 z-50 backdrop-blur-md">
    <nav className=" px-5 py-4 container mx-auto">
 
       <div className="flex items-center justify-between">
@@ -35,7 +35,7 @@ const Nav = () => {
 
 
         <div className="flex items-center gap-3">
-          <button>Sign In</button>
+          <button className="">Sign In</button>
  <button className="bg-[#d91b7e] text-white px-4 py-2 rounded-full">Sign Up</button>
         </div>
 
